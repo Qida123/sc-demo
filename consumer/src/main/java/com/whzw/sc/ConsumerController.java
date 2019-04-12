@@ -16,8 +16,13 @@ public class ConsumerController {
     String port;
 	
     @RequestMapping("/hello/{name}")
-    public String index(@PathVariable("name") String name) {
+    public String hello(@PathVariable("name") String name) {
         return port + ":" + HelloRemote.hello(name);
+    }
+    
+    @RequestMapping("/query/{name}")
+    public String query(@PathVariable("name") String name) {
+        return port + ":" + HelloRemote.query(name);
     }
 
 }

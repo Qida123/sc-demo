@@ -1,0 +1,14 @@
+# server:
+#   port: 9333
+# spring:
+#   application:
+#     name: producer
+#   zipkin:
+#     base-url: http://localhost:9111
+#   sleuth:
+#     sampler:
+#       probability: 1.0
+#       
+# 
+# hello:
+#   time: 0AM

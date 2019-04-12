@@ -3,16 +3,22 @@ eureka:
     serviceUrl:
       defaultZone: http://localhost:8761/eureka/
 server:
-  port: 7001
+  port: 7777
 spring:
   application:
     name: service-zuul
+  zipkin:
+    base-url: http://localhost:9111
+  sleuth:
+    sampler:
+      probability: 1.0
 zuul:
   routes:
     api-a:
-      path: /api-a/**
+      path: /ribbon/**
       serviceId: consumer-ribbon
     api-b:
-      path: /api-b/**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
+      path: /feign/**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
       serviceId: consumer-feign
+      
 

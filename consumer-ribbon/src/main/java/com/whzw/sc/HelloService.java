@@ -20,6 +20,16 @@ public class HelloService {
     public String hiError(String name) {
         return "hi,"+name+",sorry,error!";
     }
+    
+    
+    @HystrixCommand(fallbackMethod = "queryError")
+    public String queryService(String name) {
+        return restTemplate.getForObject("http://PRODUCER/query?name="+name,String.class);
+    }
+    
+    public String queryError(String name) {
+        return "sorry! failed to get doctor ,"+name+",system error";
+    }
 
 
 }

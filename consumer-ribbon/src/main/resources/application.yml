@@ -1,0 +1,15 @@
+management:
+  endpoints:
+    web:
+      exposure:
+        include: refresh,health,hystrix.stream
+server:
+  port: 8003
+spring:
+  application:
+    name: consumer-ribbon
+  zipkin:
+    base-url: http://localhost:9111
+  sleuth:
+    sampler:
+      probability: 1.0

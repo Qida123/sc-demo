@@ -1,0 +1,12 @@
+server:
+  port: 9111
+spring:
+   application:
+     name: zipkin-server
+   #zipkin:
+     #base-url: http://localhost:9111/
+management:
+   metrics:
+     web:
+       server:
+         auto-time-requests: false

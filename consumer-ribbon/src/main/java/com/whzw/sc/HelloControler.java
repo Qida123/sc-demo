@@ -21,6 +21,13 @@ public class HelloControler {
         return port + ":" + helloService.hiService( name );
     }
     
+    
+
+    @RequestMapping("/query/{name}")
+    public String query(@PathVariable("name") String name) {
+        return port + ":" + helloService.queryService( name );
+    }
+    
 }
 
 
